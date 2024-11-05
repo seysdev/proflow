@@ -1,24 +1,10 @@
-import { Stack } from 'expo-router';
-import { makeServer } from '@/mocks';
-
-if (__DEV__) {
-  makeServer({ environment: 'development' });
-}
+import { Stack } from 'expo-router/stack';
 
 export default function Layout() {
   return (
-    <Stack
-      screenOptions={{
-        headerStyle: {
-          backgroundColor: '#f4511e',
-        },
-        headerTintColor: '#fff',
-        headerTitleStyle: {
-          fontWeight: 'bold',
-        },
-      }}
-    >
-      <Stack.Screen name="home" options={{}} />
+    <Stack>
+      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      <Stack.Screen name="(auth)" options={{ headerShown: false }} />
     </Stack>
   );
 }
